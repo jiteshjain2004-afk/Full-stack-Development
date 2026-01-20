@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Bank App</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Balance: $<span id="balance">1000</span></h1>
+        <label>Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+        <div class="buttons">
+            <button class="deposit" onclick="deposit()">Deposit</button>
+            <button class="withdraw" onclick="withdraw()">Withdraw</button>
+        </div>
+        <div class="error" id="error">Invalid amount!</div>
+    </div>
+    <script>
+        let balance = 1000;
+
+        function deposit() {
+            const amount = Number(document.getElementById("amount").value);
+            const error = document.getElementById("error");
+
+            if (amount <= 0) {
+                error.style.display = "block";
+                return;
+            }
+
+            balance += amount;
+            updateUI();
+            error.style.display = "none";
+        }
+
+        function withdraw() {
+            const amount = Number(document.getElementById("amount").value);
+            const error = document.getElementById("error");
+
+            if (amount <= 0 || amount > balance) {
+                error.style.display = "block";
+                return;
+            }
+
+            balance -= amount;
+            updateUI();
+            error.style.display = "none";
+        }
+
+        function updateUI() {
+            document.getElementById("balance").innerText = balance;
+            document.getElementById("amount").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

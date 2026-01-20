@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        :root {
+            --card-bg: #fff;
+            --accent: #4f46e5
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Segoe UI, Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #e9eef8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            text-align: center
+        }
+
+        .form-title {
+            margin: 0 0 16px 0;
+            text-align: center;
+            font-size: 1.5rem
+        }
+
+        form {
+            width: 80%;
+            max-width: 900px;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 8px
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+
+        input[type="submit"] {
+            margin-top: 14px;
+            width: 100%;
+            padding: 10px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.95
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 0.9em;
+            margin-top: 4px;
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return validateForm()">
+        <h1 class="form-title">Student registration</h1>
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" minlength="9" maxlength="50"><br>
+        <span id="fnameErr" class="error"></span><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <span id="lnameErr" class="error"></span><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <span id="emailErr" class="error"></span><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="18" max="60"><br>
+        <span id="ageErr" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            document.getElementById('fnameErr').textContent = '';
+            document.getElementById('lnameErr').textContent = '';
+            document.getElementById('emailErr').textContent = '';
+            document.getElementById('ageErr').textContent = '';
+
+            if (document.getElementById('fname').value == '') {
+                document.getElementById('fnameErr').textContent = 'First name is required';
+                return false;
+            }
+            if (document.getElementById('lname').value == '') {
+                document.getElementById('lnameErr').textContent = 'Last name is required';
+                return false;
+            }
+            if (document.getElementById('email').value == '') {
+                document.getElementById('emailErr').textContent = 'Email is required';
+                return false;
+            }
+            if (document.getElementById('age').value == '') {
+                document.getElementById('ageErr').textContent = 'Age is required';
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
