@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Filter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Product Filter</h1>
+
+  <div class="filter-bar">
+    <strong>Filter by:</strong>
+    <select id="categoryFilter">
+      <option value="all">All Products</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+    </select>
+  </div>
+
+  <div class="products">
+    <div class="card" data-category="electronics">
+      <h2>Wireless Headphones</h2>
+      <div class="price">Rs.8000</div>
+      <span class="tag electronics">Electronics</span>
+    </div>
+
+    <div class="card" data-category="clothing">
+      <h2>Cotton T-Shirt</h2>
+      <div class="price">Rs.2500</div>
+      <span class="tag clothing">Clothing</span>
+    </div>
+
+    <div class="card" data-category="electronics">
+      <h2>Bluetooth Speaker</h2>
+      <div class="price">Rs.6000</div>
+      <span class="tag electronics">Electronics</span>
+    </div>
+
+    <div class="card" data-category="clothing">
+      <h2>Denim Jeans</h2>
+      <div class="price">Rs.3500</div>
+      <span class="tag clothing">Clothing</span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
