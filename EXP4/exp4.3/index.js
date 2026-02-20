@@ -4,10 +4,11 @@ const redis = require("redis");
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 const client = redis.createClient({
-  url: "redis://127.0.0.1:6379"
+  url: process.env.REDIS_URL
 });
 
 client.on("error", (err) => {
