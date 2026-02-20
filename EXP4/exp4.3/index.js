@@ -14,6 +14,17 @@ const client = redis.createClient({
 client.on("error", (err) => {
   console.log("Redis error:", err.message);
 });
+// Simple homepage
+app.get("/", (req, res) => {
+  res.send(`
+    <h2>Redis Seat Booking API is running 🚀</h2>
+    <p>Available endpoints:</p>
+    <ul>
+      <li><a href="/seats">/seats</a> – Check available seats</li>
+      <li><a href="/book-seat">/book-seat</a> – Book a seat</li>
+    </ul>
+  `);
+});
 
 // Server start
 app.listen(PORT, () => {
