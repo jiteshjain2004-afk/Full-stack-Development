@@ -1,14 +1,11 @@
 {
-  "name": "chetan",
+  "name": "exp4-2-playing-cards-api",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "chetan",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^5.2.1",
