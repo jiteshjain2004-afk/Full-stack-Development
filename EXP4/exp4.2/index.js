@@ -13,9 +13,15 @@ app.set("json spaces", 2);
 // Connect DB
 connectDB();
 
-// Home route
+// Simple homepage (EXP 4.2)
 app.get("/", (req, res) => {
-  res.send("🎴 Playing Card REST API is Running!");
+  res.send(
+    "Playing Cards REST API is Running!\n\n" +
+    "Endpoints:\n" +
+    "GET    /api/cards\n" +
+    "GET    /api/cards?category=royal\n" +
+    "POST   /api/cards\n"
+  );
 });
 
 // Routes
