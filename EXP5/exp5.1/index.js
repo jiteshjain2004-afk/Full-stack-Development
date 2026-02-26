@@ -22,7 +22,43 @@ mongoose
 
 // ================= TEST ROUTE =================
 app.get("/", (req, res) => {
-  res.send("Product CRUD API is running");
+  res.send(`
+    <html>
+      <head>
+        <title>Product CRUD API</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+          }
+          h1 {
+            color: #2c3e50;
+          }
+          ul {
+            line-height: 1.8;
+          }
+          a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 18px;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Product CRUD API is running 🚀</h1>
+        <p>Available endpoints:</p>
+        <ul>
+          <li><a href="/products" target="_blank">/products</a> – View all products</li>
+          <li>POST /products – Create a product</li>
+          <li>PUT /products/:id – Update a product</li>
+          <li>DELETE /products/:id – Delete a product</li>
+        </ul>
+      </body>
+    </html>
+  `);
 });
 
 // ================= CREATE =================
