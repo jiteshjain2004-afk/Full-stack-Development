@@ -1,3 +1,5 @@
+require("dotenv").config(); // only needed locally, harmless on Render
+
 const express = require("express");
 const mongoose = require("mongoose");
 const Product = require("./models/Product");
@@ -8,13 +10,11 @@ const PORT = process.env.PORT || 3000;
 // middleware
 app.use(express.json());
 
-// MongoDB Atlas connection
+// MongoDB connection (ENV VARIABLE)
 mongoose
-  .connect(
-    "mongodb+srv://dbuser:dbpass123@cluster0.sn8whdg.mongodb.net/productDB?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("MongoDB Atlas connected successfully");
+    console.log("MongoDB connected successfully");
   })
   .catch((err) => {
     console.error("MongoDB connection error:", err);
@@ -85,5 +85,5 @@ app.delete("/products/:id", async (req, res) => {
 
 // ================= SERVER =================
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
