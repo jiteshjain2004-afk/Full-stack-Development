@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/style.css">
+<div class="header">
+  <h1>Student Management System</h1>
+  <a class="btn" href="/students/new">New Student</a>
+</div>
+
+<div class="card-container">
+  <% students.forEach(student => { %>
+    <div class="card">
+      <h2><%= student.name %></h2>
+      <p><strong>Roll:</strong> <%= student.rollNo %></p>
+      <p><strong>Department:</strong> <%= student.department %></p>
+      <p><strong>Year:</strong> <%= student.year %></p>
+      <p><strong>Email:</strong> <%= student.email %></p>
+
+      <div class="actions">
+        <a class="edit" href="/students/<%= student._id %>/edit">Edit</a>
+
+        <form action="/students/<%= student._id %>?_method=DELETE" method="POST">
+          <button class="delete" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+</div>
