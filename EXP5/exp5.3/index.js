@@ -13,7 +13,16 @@ mongoose.connection.once("open", () => {
 });
 
 /* ROUTES */
-
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>E-commerce Catalog API</h1>
+    <p>Available endpoints:</p>
+    <ul>
+      <li><a href="/products">/products</a> – View all products</li>
+      <li><a href="/avg-rating">/avg-rating</a> – View average rating</li>
+    </ul>
+  `);
+});
 // Get all products
 app.get("/products", async (req, res) => {
   const products = await Product.find();
