@@ -24,13 +24,13 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.get("/", (req,res)=>{
     res.send(`
-        <h1>EXP 6.1 Middleware API</h1>
+        <h1>EXP6 Middleware API</h1>
         <h3>Available Endpoints</h3>
         <ul>
-            <li><a href="/protected">Protected Route</a></li>
-            <li><a href="/error">Error Test Route</a></li>
+            <li><a href="/protected">/protected</a></li>
+            <li><a href="/error">/error</a></li>
         </ul>
-        <p>For protected route use header:</p>
+        <p>Protected route requires header:</p>
         <pre>Authorization: mysecrettoken</pre>
     `)
 })
