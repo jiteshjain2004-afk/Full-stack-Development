@@ -22,26 +22,26 @@ mongoose.connect(process.env.MONGO_URI)
 
 /* ROOT */
 
-app.get("/",(req,res)=>{
-    res.send(`
-    <h1>JWT Banking API</h1>
+app.get("/", (req,res)=>{
+res.send(`
+<h1>JWT Banking API</h1>
 
-    <h3>Endpoints</h3>
+<h2>POST Endpoints (Use Postman)</h2>
+<ul>
+<li>/api/register</li>
+<li>/api/login</li>
+<li>/api/refresh-token</li>
+</ul>
 
-    <ul>
-        <li><a href="/api/register">POST /api/register</a></li>
-        <li><a href="/api/login">POST /api/login</a></li>
-        <li><a href="/api/refresh-token">POST /api/refresh-token</a></li>
-        <li><a href="/api/bank/account">GET /api/bank/account</a></li>
-        <li><a href="/api/bank/balance">GET /api/bank/balance</a></li>
-    </ul>
+<h2>GET Endpoints (Clickable)</h2>
+<ul>
+<li><a href="/api/bank/account">Account Info</a></li>
+<li><a href="/api/bank/balance">Account Balance</a></li>
+</ul>
 
-    <p><b>Note:</b></p>
-    <p>POST routes must be tested using Postman.</p>
-    <p>Protected routes require header:</p>
-
-    <pre>Authorization: Bearer YOUR_TOKEN</pre>
-    `)
+<p><b>Authorization Header Required:</b></p>
+<pre>Authorization: Bearer YOUR_ACCESS_TOKEN</pre>
+`)
 })
 
 /* ROUTES */
