@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: realtime-chat-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CLIENT_URL
+        value: https://realtime-chat-exp73.vercel.app
