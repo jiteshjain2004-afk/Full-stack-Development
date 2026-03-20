@@ -1,0 +1,21 @@
+/* ── Product card hover effect ── */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ── Navbar brand ── */
+.navbar-brand {
+  letter-spacing: -0.5px;
+}
+
+/* ── Smooth spinner ── */
+.spinner-border {
+  animation-duration: 0.75s;
+}
