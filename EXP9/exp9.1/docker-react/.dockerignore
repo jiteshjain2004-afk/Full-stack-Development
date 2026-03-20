@@ -1,0 +1,37 @@
+# Dependencies — never copy these, Docker installs fresh
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output — Stage 1 builds this fresh
+build
+
+# Git
+.git
+.gitignore
+
+# Environment files — use Docker build args instead
+.env
+.env.local
+.env.development
+.env.production
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker itself
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Tests (not needed in production image)
+src/**/*.test.js
+src/**/*.spec.js
