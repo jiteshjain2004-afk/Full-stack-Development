@@ -1,8 +1,8 @@
 # Stage 1: Build
 FROM node:18-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm ci --silent
+COPY package.json ./
+RUN npm install --silent
 COPY . .
 ARG REACT_APP_ENV=production
 ARG REACT_APP_VERSION=latest
