@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: social-app-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://dbuser:dbpass123@cluster0.sn8whdg.mongodb.net/social_db
+      - key: JWT_SECRET
+        value: social_app_jwt_secret_2024
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URL
+        value: "*"
