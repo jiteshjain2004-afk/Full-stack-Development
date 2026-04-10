@@ -4,6 +4,10 @@ import api from '../api';
 const AuthContext = createContext(null);
 
 const ROLE_HIERARCHY = { user: 1, moderator: 2, admin: 3 };
+const persistSession = (token, user) => {
+  localStorage.setItem('rbac_token', token);
+  localStorage.setItem('rbac_user', JSON.stringify(user));
+};
 
 export const AuthProvider = ({ children }) => {
   const [user,  setUser]  = useState(() => { try { return JSON.parse(localStorage.getItem('rbac_user')); } catch { return null; } });
@@ -12,8 +16,15 @@ export const AuthProvider = ({ children }) => {
   const login = useCallback(async (username, password) => {
     const res = await api.post('/auth/login', { username, password });
     const { token: t, user: u } = res.data;
-    localStorage.setItem('rbac_token', t);
-    localStorage.setItem('rbac_user', JSON.stringify(u));
+    persistSession(t, u);
+    setToken(t); setUser(u);
+    return u;
+  }, []);
+
+  const register = useCallback(async ({ username, email, password }) => {
+    const res = await api.post('/auth/register', { username, email, password });
+    const { token: t, user: u } = res.data;
+    persistSession(t, u);
     setToken(t); setUser(u);
     return u;
   }, []);
@@ -30,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{
-      user, token, login, logout,
+      user, token, login, register, logout,
       isAuthenticated: !!token,
       hasRole, hasMinRole,
       isAdmin:     user?.role === 'admin',

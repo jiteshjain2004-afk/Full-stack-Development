@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
-import LoginPage from './pages/LoginPage';
+import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import { AdminPage, ModeratorPage, ProfilePage, AccessDeniedPage } from './pages/Pages';
 
@@ -27,7 +27,8 @@ function AppRoutes() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
+        <Route path="/login" element={<PublicRoute><AuthPage /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><AuthPage /></PublicRoute>} />
         <Route path="/access-denied" element={<AccessDeniedPage />} />
         <Route path="/dashboard"  element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/profile"    element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
