@@ -60,11 +60,21 @@ rbac-app/
 ## Run Locally
 ```bash
 # Terminal 1
-cd server && npm install && node seed.js && npm start
+cd server
+cp .env.example .env
+# fill in MONGO_URI and JWT_SECRET in server/.env
+npm install
+node seed.js
+npm start
 
 # Terminal 2
 cd client && npm install && npm start
 ```
+
+## Security Note
+- Do not commit real secrets to `server/.env` or deployment manifests.
+- Use `server/.env.example` as the template for local setup.
+- If the leaked MongoDB password or JWT secret are still active, rotate them in your MongoDB provider and deployment settings.
 
 ## Objectives Covered
 1. ✅ Role hierarchy — admin > moderator > user

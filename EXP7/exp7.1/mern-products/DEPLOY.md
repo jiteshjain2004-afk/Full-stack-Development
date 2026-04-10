@@ -34,7 +34,8 @@ git push origin main
    - **Build Command:** `npm install`
    - **Start Command:** `node index.js`
 5. Under **Environment Variables**, add:
-   - `MONGO_URI` = `mongodb+srv://dbuser:dbpass123@cluster0.sn8whdg.mongodb.net/products_db`
+   - `MONGO_URI` = `your-mongodb-connection-string`
+     *(use your own MongoDB Atlas or database URI, never a real credential from source control)*
 6. Click **Create Web Service**
 7. Wait ~2 min → You get a URL like: `https://mern-products-api.onrender.com`
 
