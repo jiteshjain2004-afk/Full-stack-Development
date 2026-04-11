@@ -1,0 +1,22 @@
+services:
+  backend:
+    image: jitesh2004/auth-dashboard-backend:latest
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      APP_NAME: Dockerized Auth Dashboard
+      MONGO_URI: ${MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES_IN: 1d
+      FRONTEND_ORIGIN: "*"
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: jitesh2004/auth-dashboard-frontend:latest
+    environment:
+      API_BASE_URL: /api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
