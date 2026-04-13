@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# 🛒 Duniya Mart - Multi-Vendor Marketplace
 
-## Project info
+A modern, full-stack e-commerce marketplace connecting buyers with local sellers across India. Built with React, TypeScript, and Supabase.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## ✨ Features
 
-## How can I edit this code?
+### For Buyers
+- Browse products from verified sellers
+- Advanced search and filtering
+- Shopping cart and checkout
+- Order tracking and history
+- Secure authentication
 
-There are several ways of editing your application.
+### For Sellers
+- Seller dashboard with analytics
+- Product management (add, edit, delete)
+- Order management
+- Business profile customization
+- Sales tracking
 
-**Use Lovable**
+### For Admins
+- Seller application approval system
+- User management
+- Platform analytics
+- Content moderation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🚀 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Components**: shadcn/ui, Radix UI, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL, Authentication, Storage)
+- **State Management**: React Context API
+- **Routing**: React Router v6
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
 
-**Use your preferred IDE**
+## 📦 Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Clone the repository
+git clone https://github.com/jiteshjain2004-afk/Full-stack-Development.git
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Navigate to project directory
+cd "Full-stack-Development/capstone project"
 
-Follow these steps:
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Set up environment variables
+cp .env.example .env
+# Add your Supabase credentials to .env
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Run development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🔧 Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file with the following:
 
-**Use GitHub Codespaces**
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+VITE_SUPABASE_PROJECT_ID=your_project_id
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🗄️ Database Setup
 
-## What technologies are used for this project?
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Run the migrations in order from `supabase/migrations/`
+3. Set up Row Level Security policies
+4. Configure authentication providers
 
-This project is built with:
+## 📜 Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+npm run test         # Run tests
+```
 
-## How can I deploy this project?
+## 🌐 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Deploy to Vercel
 
-## Can I connect a custom domain to my Lovable project?
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Add environment variables
+4. Deploy!
 
-Yes, you can!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📱 Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+├── components/       # Reusable UI components
+├── contexts/         # React Context providers
+├── hooks/           # Custom React hooks
+├── pages/           # Page components
+├── integrations/    # Supabase integration
+├── lib/             # Utility functions
+├── types/           # TypeScript types
+└── utils/           # Helper functions
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👨‍💻 Author
+
+**Jitesh Jain**
+- GitHub: [@jiteshjain2004-afk](https://github.com/jiteshjain2004-afk)
+
+## 🙏 Acknowledgments
+
+- Built with [Vite](https://vitejs.dev/)
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Backend powered by [Supabase](https://supabase.com/)
