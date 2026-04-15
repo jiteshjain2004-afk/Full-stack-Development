@@ -20,10 +20,6 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminApprovalsPage from "./pages/admin/AdminApprovalsPage";
 import SellerDashboard from "./pages/seller/SellerDashboard";
 import BuyerDashboard from "./pages/buyer/BuyerDashboard";
-import SeedDatabasePage from "./pages/SeedDatabasePage";
-import CreateAdminPage from "./pages/CreateAdminPage";
-import MakeAdminPage from "./pages/MakeAdminPage";
-import TestAdminPage from "./pages/TestAdminPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,10 +49,6 @@ const App = () => (
                   <Route path="/admin/approvals" element={<AdminApprovalsPage />} />
                   <Route path="/seller/dashboard" element={<SellerDashboard />} />
                   <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
-                  <Route path="/seed-database" element={<SeedDatabasePage />} />
-                  <Route path="/create-admin" element={<CreateAdminPage />} />
-                  <Route path="/make-admin" element={<MakeAdminPage />} />
-                  <Route path="/test-admin" element={<TestAdminPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
